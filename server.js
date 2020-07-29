@@ -21,13 +21,13 @@ app.get(`/`, (req, res) => {
     res.render("index")
 })
 
-app.get(`/icecream/:name`, (req, res) => {
+app.get(`/icecreams/:name`, (req, res) => {
     const targetFlavor = req.params.name
     const found = icecreams.find(flavor => flavor.name === targetFlavor)
     res.render("flavor", found)
 })
 
-app.get(`icecreams`, (req, res) => {
+app.get(`/icecreams`, (req, res) => {
 
     //loop over all the ice creams and display them all to the user
     //sending an object 
