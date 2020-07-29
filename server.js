@@ -1,8 +1,8 @@
-const express = require("express")
-const exphbs = require("express-handlebars")
+const express = require("express");
+const exphbs = require("express-handlebars");
 
-const app = express()
-const PORT = 3000
+const app = express();
+const PORT = 8000;
 
 //handlebar documentation
 app.engine('handlebars', exphbs());
@@ -29,7 +29,9 @@ app.get(`/icecream/:name`, (req, res) => {
 
 app.get(`icecreams`, (req, res) => {
 
+    //loop over all the ice creams and display them all to the user
+    //sending an object 
+res.render("flavors", {icecreams} )
 })
-
 
 app.listen(PORT, () => console.log(`Listening on port: ${PORT}`))
